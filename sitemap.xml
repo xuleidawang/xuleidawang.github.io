@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>xuleidawang.github.io/tags/computer-graphics/</loc>
+    <lastmod>2019-08-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>xuleidawang.github.io/</loc>
+    <lastmod>2019-08-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>xuleidawang.github.io/post/</loc>
+    <lastmod>2019-08-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>xuleidawang.github.io/tags/resources/</loc>
+    <lastmod>2019-08-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>xuleidawang.github.io/post/siggraph2019/</loc>
+    <lastmod>2019-08-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>xuleidawang.github.io/tags/</loc>
+    <lastmod>2019-08-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>xuleidawang.github.io/authors/admin/</loc>
   </url>
   
@@ -15,14 +45,6 @@
   </url>
   
   <url>
-    <loc>xuleidawang.github.io/</loc>
-  </url>
-  
-  <url>
-    <loc>xuleidawang.github.io/post/</loc>
-  </url>
-  
-  <url>
     <loc>xuleidawang.github.io/publication_types/</loc>
   </url>
   
@@ -32,10 +54,6 @@
   
   <url>
     <loc>xuleidawang.github.io/talk/</loc>
-  </url>
-  
-  <url>
-    <loc>xuleidawang.github.io/tags/</loc>
   </url>
   
 </urlset>

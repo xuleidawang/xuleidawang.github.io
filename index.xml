@@ -5,12 +5,154 @@
     <link>xuleidawang.github.io/</link>
       <atom:link href="xuleidawang.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>LEI XU</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Lei Xu 2020</copyright>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Lei Xu 2020</copyright><lastBuildDate>Sat, 10 Aug 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>LEI XU</title>
       <link>xuleidawang.github.io/</link>
     </image>
+    
+    <item>
+      <title>SIGGRAPH 2019 Rendering Resources</title>
+      <link>xuleidawang.github.io/post/siggraph2019/</link>
+      <pubDate>Sat, 10 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>xuleidawang.github.io/post/siggraph2019/</guid>
+      <description>&lt;p&gt;
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;xuleidawang.github.io/xuleidawang.github.io/img/alita.jpg&#34; data-caption=&#34;From the movie Alita:Battle Angel&#34;&gt;
+
+
+  &lt;img src=&#34;xuleidawang.github.io/xuleidawang.github.io/img/alita.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    From the movie &lt;em&gt;Alita:Battle Angel&lt;/em&gt;
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+I had an opportunity to attend the SIGGRAPH this year July 28 - Aug 1 in L.A.
+And I’ll try to collect and archive the resources about &lt;strong&gt;rendering&lt;/strong&gt; here.&lt;/p&gt;
+&lt;p&gt;If you have a membership to 
+&lt;a href=&#34;https://dl.acm.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ACM Digital Library&lt;/a&gt;, you can find almost everthing about the conference there, even incluing recorded videos.&lt;br&gt;
+For a more comprehensive resources, you can check this link from 
+&lt;a href=&#34;https://blog.selfshadow.com/2019/07/30/siggraph-2019-links/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ke-Sen Huang&amp;rsquo;s page&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;courses&#34;&gt;&lt;strong&gt;Courses&lt;/strong&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;heading&#34;&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Are we done with Ray Tracing? 
+&lt;a href=&#34;https://sites.google.com/view/arewedonewithraytracing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[Course Site]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Introduction to Real-Time Ray Tracing 
+&lt;a href=&#34;http://rtintro.realtimerendering.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[Course Site]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Path Guiding in Production 
+&lt;a href=&#34;https://cgg.mff.cuni.cz/~jirka/path-guiding-in-production/2019/index.htm&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[Course Site]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Advances in Real-Time Rendering in Games: Part 1&amp;amp;2 
+&lt;a href=&#34;http://advances.realtimerendering.com/s2019/index.htm&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[Course Site]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Open Problems in Real-Time Rendering&lt;/li&gt;
+&lt;li&gt;Path Tracing in Production Part 1 &amp;amp; 2 
+&lt;a href=&#34;https://jo.dreggn.org/path-tracing-in-production/2019/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[Course Site]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;My Favourite Samples 
+&lt;a href=&#34;https://sites.google.com/view/myfavoritesamples&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[Course Site]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;RTX Accelerated Ray Tracing With OptiX 
+&lt;a href=&#34;https://sites.google.com/view/rtx-acc-ray-tracing-with-optix&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[Course Site]&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;technical-papers&#34;&gt;&lt;strong&gt;Technical Papers&lt;/strong&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Hierarchical Russian Roulette for Vertex Connections 
+&lt;a href=&#34;http://www.jp.square-enix.com/tech/library/pdf/Hierarchical_Russian_Roulette_for_Vertex_Connections.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[PDF]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Optimal Multiple Importance Sampling 
+&lt;a href=&#34;https://graphics.cg.uni-saarland.de/publications/kondapaneni-2019-siggraph-optimal-mis.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[Site]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Ellipsoidal Path Connections for Time-Gated Rendering 
+&lt;a href=&#34;http://imaging.cs.cmu.edu/ellipsoidal_connections/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[Site]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A Monte-Carlo Framework for Rendering Speckle Statistics in Scattering Meida 
+&lt;a href=&#34;https://arxiv.org/pdf/1901.06931.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[PDF]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Rodent: Generating Renderers Without Writing a Generator 
+&lt;a href=&#34;https://graphics.cg.uni-saarland.de/papers/perard-2019-siggraph-rodent.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[PDF]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Volume Path Guiding Based on Zero-Variance Random Walk THeory 
+&lt;a href=&#34;http://cim.mcgill.ca/~derek/files/volume-path-guiding-TOG.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[PDF]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A Null-Scattering Path Integral Formulation of Light Transport 
+&lt;a href=&#34;https://cs.dartmouth.edu/~wjarosz/publications/miller19null.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[Site]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fractionl Gaussian Fields for Modeling and Rendering of Spatially-Correlated Media 
+&lt;a href=&#34;https://sites.cs.ucsb.edu/~lingqi/publications/paper_fgf.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[PDF]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Photon Surface for Robust, Unbiased Volumentric Density Estimation 
+&lt;a href=&#34;https://cs.dartmouth.edu/~wjarosz/publications/deng19photon.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[Site]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Deep Inverse Rendering for High-resolution SVBRDF Estimation from an Arbitrary Number of Images 
+&lt;a href=&#34;https://gao-duan.github.io/publications/mvsvbrdf/mvsvbrdf_low_resolution.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[PDF]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Accurate Appearance Preserving Prefiltering for Rendering Displacement-Mapped Surface 
+&lt;a href=&#34;http://cseweb.ucsd.edu/~liw086/multires-surface-s19/multires.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[PDF]&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In the end, share a photo with my friends and dear Professors at University of California, Santa Barbara.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;xuleidawang.github.io/xuleidawang.github.io/img/Siggraph2019.jpg&#34; data-caption=&#34;UCSB Dinner@SIGGRAPH2019&#34;&gt;
+
+
+  &lt;img src=&#34;xuleidawang.github.io/xuleidawang.github.io/img/Siggraph2019.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    UCSB Dinner@SIGGRAPH2019
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;People from left front to back to right front are:
+&lt;a href=&#34;https://www.ece.ucsb.edu/~psen/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Pradeep Sen&lt;/a&gt;, 
+&lt;a href=&#34;http://goksu.me/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Goksu Guvendiren&lt;/a&gt;, Sorry I forgot him, 
+&lt;a href=&#34;https://sites.cs.ucsb.edu/~holl/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tobias Hollerer&lt;/a&gt;, 
+&lt;a href=&#34;http://faculty.cs.tamu.edu/nimak/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Nima Kalantari&lt;/a&gt;, 
+&lt;a href=&#34;https://github.com/chellmuth&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chris Hellmuth&lt;/a&gt;, 
+&lt;a href=&#34;https://www.ece.ucsb.edu/~sbako/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Steve Bako&lt;/a&gt;, 
+&lt;a href=&#34;http://www.tkim.graphics/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Theodore Kim&lt;/a&gt;, 
+&lt;a href=&#34;lei-xu.com&#34;&gt;Me&lt;/a&gt;, 
+&lt;a href=&#34;https://velysianp.wixsite.com/elysonbaipersonal&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Yaoyi(Elyson)) Bai&lt;/a&gt;, 
+&lt;a href=&#34;https://sites.cs.ucsb.edu/~lingqi/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Lingqi Yan&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
   </channel>
 </rss>
