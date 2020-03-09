@@ -5,12 +5,59 @@
     <link>xuleidawang.github.io/post/</link>
       <atom:link href="xuleidawang.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Lei Xu 2020</copyright><lastBuildDate>Sat, 10 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Lei Xu 2020</copyright><lastBuildDate>Mon, 09 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Posts</title>
       <link>xuleidawang.github.io/post/</link>
     </image>
+    
+    <item>
+      <title>A introduction to temporal antialiasing</title>
+      <link>xuleidawang.github.io/post/taa/</link>
+      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>xuleidawang.github.io/post/taa/</guid>
+      <description>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;xuleidawang.github.io/xuleidawang.github.io/img/TAAUncharted4.jpg&#34; data-caption=&#34;From Temporal Antialiasing in Uncharted 4 in SIGGRAPH 2016&#34;&gt;
+
+
+  &lt;img src=&#34;xuleidawang.github.io/xuleidawang.github.io/img/TAAUncharted4.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    From &lt;em&gt;Temporal Antialiasing in Uncharted 4&lt;/em&gt; in SIGGRAPH 2016
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Recently found this preprint EGSR 2020 paper 
+&lt;a href=&#34;http://behindthepixels.io/assets/files/TemporalAA.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;A Survey of Temporal Antialiasing Techniques&lt;/em&gt;&lt;/a&gt; by Lei Yang, Shiqiu Liu, Marco Salvi online. I&amp;rsquo;m somewhat interested in the TAA technique and worked on it in my Real time ray tracing project before. This post will serve as my summary to the paper. Without extra caption, all the pictures in this post are credited to the orignal paper.&lt;/p&gt;
+&lt;p&gt;[Comming soon]&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>SIGGRAPH 2019 Rendering Resources</title>
