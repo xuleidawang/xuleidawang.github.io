@@ -55,7 +55,187 @@
 
 &lt;p&gt;Recently found this preprint EGSR 2020 paper 
 &lt;a href=&#34;http://behindthepixels.io/assets/files/TemporalAA.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;A Survey of Temporal Antialiasing Techniques&lt;/em&gt;&lt;/a&gt; by Lei Yang, Shiqiu Liu, Marco Salvi online. I&amp;rsquo;m somewhat interested in the TAA technique and worked on it in my Real time ray tracing project before. This post will serve as my summary to the paper. Without extra caption, all the pictures in this post are credited to the orignal paper.&lt;/p&gt;
-&lt;p&gt;[Comming soon]&lt;/p&gt;
+&lt;h3 id=&#34;what-is-taa&#34;&gt;What is TAA?&lt;/h3&gt;
+&lt;p&gt;Temporal Antialiasing is also defined as temporally-amortized supersampling, is a widely used antialiasing technique in today&amp;rsquo;s game engine. Aliasing has been converning the game developers for a long time, TAA is the technique to do the 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Anti-aliasing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;antialiasing&lt;/a&gt; by &lt;strong&gt;using data gathered across multiple frames to do the spatial antialiasing&lt;/strong&gt;. It has two main components: sample accumulation, and history validation.&lt;/p&gt;
+&lt;p&gt;TAA aims to resolve subpixel details that is missing in single sampled shading. By reprojecting shading result from previous frames, TAA amortizes the cost shading multiple samples per pixel over consecutive frames. Usually implemented as a single post-processing pass.&lt;/p&gt;
+&lt;h3 id=&#34;1-algorithm-overview&#34;&gt;1. Algorithm overview&lt;/h3&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;xuleidawang.github.io/xuleidawang.github.io/img/figure2.png&#34; data-caption=&#34;Figure 2: Conceptual illustration of how TAA amortizes spatial supersampling over multiple frames&#34;&gt;
+
+
+  &lt;img src=&#34;xuleidawang.github.io/xuleidawang.github.io/img/figure2.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Figure 2: Conceptual illustration of how TAA amortizes spatial supersampling over multiple frames
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;The key of the algorithm is to reuse the pixel information from previous frames. Assuming a number of samples (&lt;span style=&#34;color:yellow&#34;&gt;&lt;strong&gt;yellow dot&lt;/strong&gt;&lt;/span&gt;) were gathered for each pixel prior to frame N, and have been averaged and stored in the history buffer as a single color value per pixel (&lt;span style=&#34;color:green&#34;&gt;green dot&lt;/span&gt;).&lt;/p&gt;
+&lt;p&gt;For each pixel in frame N, map its center location (&lt;span style=&#34;color:orange&#34;&gt;orange dot&lt;/span&gt;) to the previous frame N-1. Resample history buffer at that location to obtain the history color for that pixel.
+For frame N, shade a new sample (&lt;span style=&#34;color:blue&#34;&gt;blue dot&lt;/span&gt;) at a jittered location, blend the result with the resampled history color. This produce the output pixel color of frame N, also becomes the history of frame N+1.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;xuleidawang.github.io/xuleidawang.github.io/img/figure3.png&#34; data-caption=&#34;Figure 3: Schematic diagram of a typical TAA implementation. Blue blocks are TAA components, green blocks are stages of the render engine.&#34;&gt;
+
+
+  &lt;img src=&#34;xuleidawang.github.io/xuleidawang.github.io/img/figure3.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Figure 3: Schematic diagram of a typical TAA implementation. Blue blocks are TAA components, green blocks are stages of the render engine.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;2-accumulating-temporal-samples&#34;&gt;2. Accumulating temporal samples&lt;/h3&gt;
+&lt;p&gt;Spatial antialiasing requires convolving the continuous shading signal with a low-pass pixel filter to suppress excessive high-frequency components before sampling the signal. In practice, people supersample the continuous signal before applying the low-pass filter on the discrete samples of the signal. TAA amortizes the cost of supersampling by generating, aligning, and accumulating these spatial samples over multiple frames.&lt;/p&gt;
+&lt;h3 id=&#34;3-data-reprojection-between-multiple-frames&#34;&gt;3. Data reprojection between multiple frames&lt;/h3&gt;
+&lt;p&gt;With scene motion between frames, each pixel needs to compute its corresponding location in the previous frame to fetch history data. During scene rasterization, geometry is transformed twice, once using previous frames&amp;rsquo; data and once using current frames&amp;rsquo;data. The offsets between the current and previous location of every pixel is stored into a &lt;strong&gt;motion vector&lt;/strong&gt; texture, which later used by the TAA algorithm.&lt;/p&gt;
+&lt;p&gt;In order to save framebuffer, some engine only compute and store motion vectors for animated object. For pixels are not a part of it, their location in the previous frame is :&lt;br&gt;
+Eq.(1):$$p_{n-1} = M_{n-1} M_{n}^{-1}p_{n}$$
+where $p_{n} = (\frac{2x}{w}-1, \frac{2y}{h}-1, z, 1)$ is 3D 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Clip_coordinates&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;clip-space&lt;/a&gt; location of the current frame pixel in 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Homogeneous_coordinates&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;homogeneous coordinates&lt;/a&gt;, and $M_{n-1}$ and $M_{n}$ are previous and current frame&amp;rsquo;s view-projection matrices. The resulting position is obtained after a perspective division.&lt;/p&gt;
+&lt;p&gt;Eq.(2):
+$$f_{n}(p) = \alpha s_{n}(p) + (1- \alpha) f_{n-1}(\pi(p))$$
+where $f_{n}(p)$ is frame n&amp;rsquo;s color output at pixel p, $\alpha$ is the blending factor, $s_{n}(p)$ is frame n&amp;rsquo;s new sample color at pixel p, and $f_{n-1}(\pi(p))$ is the reprojected ouput (history color) from previous frame, using the reprojecting operator $\pi$ and resampling.&lt;/p&gt;
+&lt;h3 id=&#34;4-validate-history-data&#34;&gt;4. Validate history data&lt;/h3&gt;
+&lt;p&gt;However, the history frame data are not always reliable and trsutworty, due to the motion of the scene, change of lighting, etc. We need a way to validate them.&lt;/p&gt;
+&lt;h4 id=&#34;41-history-rejection&#34;&gt;4.1 History rejection&lt;/h4&gt;
+&lt;p&gt;This is done be setting $\alpha$ in eq.2 to 1. Two source to determine the confidence of the history: geometry data (depth, normal, object ID and motion vector), and color data. Geometry data is typically used to identify invalid history data reprojected from mismatching surfaces due to occlusion changes. 
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;xuleidawang.github.io/xuleidawang.github.io/img/figure5.png&#34; data-caption=&#34;Figure 5: Checking for disocclusion changes. Pixel coordinate $p_{1}$ in frame t is reprjected to coordinats $\pi_{t-1}(p_{1})$ in frame t-1, where it is occluded by another piece of geometry. By checking geometry data (depth, surface normal, or object ID), the occlusion can be identified and properly handled.&#34;&gt;
+
+
+  &lt;img src=&#34;xuleidawang.github.io/xuleidawang.github.io/img/figure5.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Figure 5: Checking for disocclusion changes. Pixel coordinate $p_{1}$ in frame t is reprjected to coordinats $\pi_{t-1}(p_{1})$ in frame t-1, where it is occluded by another piece of geometry. By checking geometry data (depth, surface normal, or object ID), the occlusion can be identified and properly handled.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h4 id=&#34;42-history-rectification&#34;&gt;4.2 History rectification&lt;/h4&gt;
+&lt;p&gt;Simpley rejecting stale or invlaid history data leads to increased temporal artifacts. Rectified history blend with current frame, leading to more visually acceptable results.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;xuleidawang.github.io/xuleidawang.github.io/img/figure6.png&#34; data-caption=&#34;Figure6: Common history rectification techniques in 2D chromaticity space for simplicity&#34;&gt;
+
+
+  &lt;img src=&#34;xuleidawang.github.io/xuleidawang.github.io/img/figure6.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Figure6: Common history rectification techniques in 2D chromaticity space for simplicity
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Because the current frame samples are often sparse and aliased, pull information from 3x3 neighbourhood of each pixel. The 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Convex_hull&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;convex hull&lt;/a&gt; of the neighborhood samples in color space represent the extent of the colors we expect around the center pixel. If the history color falls inside the convex hull, it is assumed to be consistent with the current frame data and can be reused safely. If it falls outside the convex hull, we need to rectify it to make it consistent with the current frame data.&lt;/p&gt;
+&lt;p&gt;We do so by connecting history color with the current-frame sample color, and clip the line segment
+against the convex hull. The intersection point is the best estimate
+of history that is consistent with the current frame samples.&lt;/p&gt;
+&lt;p&gt;In practice, computing a convex hull and the ray-hull intersection per pixel can be prohibitively expensive. A common approximation to this is to compute an axis-aligned bounding box (AABB)
+of the colors using a min/max filter, and either clip or clamp the
+history color against the AABB (Figure 6(c)).&lt;/p&gt;
+&lt;h3 id=&#34;5-conclusion&#34;&gt;5. Conclusion&lt;/h3&gt;
+&lt;p&gt;This post contains a brief introduction for the TAA, summarized from the paper &lt;em&gt;A Survey of Temporal Antialiasing Techniques&lt;/em&gt;. The past decade has witnessed great advances and success of temporal antialiasing and upsampling techniques in the gaming industry.In particular, this post discuss how spatial samples are gathered and accumulated temporally, how history data are validated.&lt;/p&gt;
+&lt;p&gt;Robustness and reliability of history rectification needs to be further improved to fully utilize the temporal data available. In the near future, we expect advances in both analytical and machine learningbased solutions to surpass today’s best techniques in this area, and bring the image quality of TAA to the next level.&lt;/p&gt;
 </description>
     </item>
     
