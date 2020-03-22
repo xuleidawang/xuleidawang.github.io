@@ -5,12 +5,21 @@
     <link>xuleidawang.github.io/post/</link>
       <atom:link href="xuleidawang.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Lei Xu 2020</copyright><lastBuildDate>Mon, 09 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Lei Xu 2020</copyright><lastBuildDate>Sat, 21 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Posts</title>
       <link>xuleidawang.github.io/post/</link>
     </image>
+    
+    <item>
+      <title>Microfacet Reflection Model</title>
+      <link>xuleidawang.github.io/post/microfacet/</link>
+      <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>xuleidawang.github.io/post/microfacet/</guid>
+      <description>&lt;p&gt;[Coming soon]&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>An introduction to temporal antialiasing</title>

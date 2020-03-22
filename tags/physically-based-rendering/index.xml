@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Physically-Based Rendering | LEI XU</title>
+    <link>xuleidawang.github.io/tags/physically-based-rendering/</link>
+      <atom:link href="xuleidawang.github.io/tags/physically-based-rendering/index.xml" rel="self" type="application/rss+xml" />
+    <description>Physically-Based Rendering</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Lei Xu 2020</copyright><lastBuildDate>Sat, 21 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Physically-Based Rendering</title>
+      <link>xuleidawang.github.io/tags/physically-based-rendering/</link>
+    </image>
+    
+    <item>
+      <title>Microfacet Reflection Model</title>
+      <link>xuleidawang.github.io/post/microfacet/</link>
+      <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>xuleidawang.github.io/post/microfacet/</guid>
+      <description>&lt;p&gt;[Coming soon]&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
