@@ -455,22 +455,6 @@ export default function Home() {
 
         <div className="max-w-6xl mx-auto px-6 relative z-10 pt-24 pb-16 w-full">
           <div className="max-w-3xl">
-            <div
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-8 animate-fade-in"
-              style={{
-                border: "1px solid oklch(0.62 0.22 295 / 0.3)",
-                background: "oklch(0.62 0.22 295 / 0.06)",
-              }}
-            >
-              <span
-                className="w-2 h-2 rounded-full"
-                style={{ background: "oklch(0.62 0.22 295)", animation: "pulse 2s infinite" }}
-              />
-              <span className="text-xs font-medium tracking-wide" style={{ color: "oklch(0.62 0.22 295)" }}>
-                Available for new projects
-              </span>
-            </div>
-
             <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 animate-fade-in-up">
               <span style={{ color: "oklch(0.96 0.005 265)" }}>Lei</span>{" "}
               <span className="text-gradient-purple">Xu</span>
@@ -584,8 +568,7 @@ export default function Home() {
           <SectionLabel>Writing & Research</SectionLabel>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold max-w-lg" style={{ color: "oklch(0.96 0.005 265)" }}>
-              Case studies &{" "}
-              <span className="text-gradient-purple">deep dives</span>
+              <span className="text-gradient-purple">Blog</span>
             </h2>
             <Link
               to="/blog"
@@ -727,20 +710,6 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Testimonials ──────────────────────────────────────────────────── */}
-      <section id="testimonials" className="section-padding" style={{ borderTop: "1px solid oklch(0.20 0.015 265)" }}>
-        <div className="max-w-6xl mx-auto px-6">
-          <SectionLabel>Collaborators</SectionLabel>
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-12 max-w-lg" style={{ color: "oklch(0.96 0.005 265)" }}>
-            What people{" "}
-            <span className="text-gradient-purple">say</span>
-          </h2>
-          <div className="max-w-2xl mx-auto">
-            <TestimonialCarousel />
           </div>
         </div>
       </section>
