@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const socials = [
   { icon: Github, label: "GitHub", href: "https://github.com/xuleidawang" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/lei-xu" },
-  { icon: Twitter, label: "Twitter / X", href: "https://twitter.com/xuleidawang" },
-  { icon: Mail, label: "Email", href: "mailto:lei@lei-xu.com" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/lei-xu-546048a5/" },
+  { icon: Twitter, label: "X / Twitter", href: "https://x.com/xulei_daniel" },
+  { icon: Mail, label: "daniel_xulei@hotmail.com", href: "mailto:daniel_xulei@hotmail.com" },
 ];
 
 export default function Footer() {
