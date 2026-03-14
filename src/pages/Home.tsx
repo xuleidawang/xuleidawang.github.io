@@ -683,9 +683,10 @@ export default function Home() {
 
               <div className="mt-10 space-y-6">
                 {[
-                  { period: "2022 – Present", role: "Senior Graphics Engineer", company: "Naughty Dog" },
-                  { period: "2019 – 2022", role: "Graphics Research Engineer", company: "Epic Games" },
-                  { period: "2017 – 2019", role: "Rendering Programmer", company: "Ubisoft" },
+                  { period: "2024.05 – Present", role: "Avatar Platform", company: "Meta Reality Labs" },
+                  { period: "2023.04 – 2024.04", role: "Lego 2K Drive & NBA 2K 25", company: "Visual Concepts / 2K Games" },
+                  { period: "2021.06 – 2023.03", role: "Google Map/Earth 3D Reconstruction", company: "Google" },
+                  { period: "2019.08 – 2021.03", role: "Bing Maps 3D Reconstruction", company: "Microsoft" },
                 ].map((exp) => (
                   <div key={exp.company} className="flex gap-4">
                     <div className="flex flex-col items-center">
