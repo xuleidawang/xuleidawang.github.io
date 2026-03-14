@@ -471,9 +471,7 @@ export default function Home() {
               className="text-base md:text-lg max-w-xl leading-relaxed mb-10 animate-fade-in-up animate-delay-200"
               style={{ color: "oklch(0.60 0.015 265)" }}
             >
-              Building the invisible infrastructure of visual experiences — from real-time rendering engines
-              to novel research in computational graphics. I bridge the gap between academic theory and
-              production-grade systems.
+              I love everything about computer graphics, visual computing!
             </p>
 
             <div className="flex flex-wrap gap-4 animate-fade-in-up animate-delay-300">
@@ -587,17 +585,7 @@ export default function Home() {
               </h2>
               <div className="space-y-4 leading-relaxed" style={{ color: "oklch(0.60 0.015 265)" }}>
                 <p>
-                  I'm a graphics software engineer and researcher with over 8 years of experience building
-                  high-performance rendering systems, tools, and pipelines for games, film, and interactive media.
-                </p>
-                <p>
-                  My work spans from low-level GPU programming in CUDA and Vulkan to high-level research
-                  in neural rendering and procedural generation. I've contributed to shipped AAA titles and
-                  published research at SIGGRAPH and EGSR.
-                </p>
-                <p>
-                  When I'm not optimizing shaders, I write about graphics programming on my blog and mentor
-                  junior engineers entering the field.
+                  I'm a graphics software engineer and researcher with over 8 years of experience building high-performance rendering systems, tools, and pipelines for games, VR operating system, and interactive media.
                 </p>
               </div>
               <div className="mt-8">
