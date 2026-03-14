@@ -701,10 +701,10 @@ export default function Home() {
                         {exp.period}
                       </p>
                       <p className="font-semibold text-sm" style={{ color: "oklch(0.96 0.005 265)" }}>
-                        {exp.role}
+                        {exp.company}
                       </p>
                       <p className="text-xs" style={{ color: "oklch(0.60 0.015 265)" }}>
-                        {exp.company}
+                        {exp.role}
                       </p>
                     </div>
                   </div>
