@@ -52,7 +52,7 @@ export default function Navbar() {
           onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.62 0.22 295)")}
           onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.96 0.005 265)")}
         >
-          LX
+          xuleidawang
         </Link>
 
         {/* Desktop links */}

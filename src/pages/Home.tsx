@@ -511,26 +511,7 @@ export default function Home() {
               </a>
             </div>
 
-            <div
-              className="flex flex-wrap gap-8 mt-16 pt-8 border-t animate-fade-in-up animate-delay-400"
-              style={{ borderColor: "oklch(0.20 0.015 265)" }}
-            >
-              {[
-                { value: "8+", label: "Years Experience" },
-                { value: "30+", label: "Projects Shipped" },
-                { value: "4", label: "SIGGRAPH Papers" },
-                { value: "12+", label: "Collaborators" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <p className="font-display text-2xl font-bold" style={{ color: "oklch(0.96 0.005 265)" }}>
-                    {stat.value}
-                  </p>
-                  <p className="text-xs mt-0.5" style={{ color: "oklch(0.60 0.015 265)" }}>
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
+
           </div>
         </div>
       </section>
@@ -581,32 +562,15 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Case study cards */}
-          <div className="flex flex-col gap-6 mb-10">
-            {caseStudies.map((study) => (
-              <CaseStudyCard key={study.id} study={study} />
-            ))}
-          </div>
-
-          {/* Latest blog posts */}
-          {latestPosts.length > 0 && (
-            <>
-              <div className="flex items-center gap-4 mb-8">
-                <div className="flex-1 h-px" style={{ background: "oklch(0.20 0.015 265)" }} />
-                <div
-                  className="flex items-center gap-2 text-xs font-medium tracking-widest uppercase"
-                  style={{ color: "oklch(0.60 0.015 265)" }}
-                >
-                  <BookOpen size={13} /> Latest from the Blog
-                </div>
-                <div className="flex-1 h-px" style={{ background: "oklch(0.20 0.015 265)" }} />
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                {latestPosts.map((post) => (
-                  <BlogPostMini key={post.slug} post={post} />
-                ))}
-              </div>
-            </>
+          {/* Blog posts */}
+          {latestPosts.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {latestPosts.map((post) => (
+                <BlogPostMini key={post.slug} post={post} />
+              ))}
+            </div>
+          ) : (
+            <p className="text-sm" style={{ color: "oklch(0.60 0.015 265)" }}>No posts yet — check back soon.</p>
           )}
         </div>
       </section>
