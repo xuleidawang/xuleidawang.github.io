@@ -3,9 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Work", href: "/#projects" },
-  { label: "Writing", href: "/#writing" },
   { label: "About", href: "/#about" },
+  { label: "Projects", href: "/#projects" },
   { label: "Contact", href: "/#contact" },
 ];
 
