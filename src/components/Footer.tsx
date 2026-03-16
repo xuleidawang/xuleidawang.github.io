@@ -92,7 +92,7 @@ export default function Footer() {
                 style={{ color: "oklch(0.60 0.015 265)" }}
               >
                 <Mail size={15} />
-                daniel_xulei@hotmail.com
+                daniel_[lastname][firstname]@hotmail.com
               </div>
             </div>
           </div>
