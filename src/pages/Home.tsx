@@ -108,62 +108,6 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
   );
 }
 
-function CaseStudyCard({ study }: { study: typeof caseStudies[0] }) {
-  return (
-    <div className="card-dark group overflow-hidden flex flex-col md:flex-row">
-      <div className="md:w-2/5 h-48 md:h-auto overflow-hidden">
-        <img
-          src={study.image}
-          alt={study.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-      </div>
-      <div className="flex-1 p-6 md:p-8 flex flex-col justify-between gap-4">
-        <div>
-          <span
-            className="text-xs font-mono-custom tracking-widest uppercase"
-            style={{ color: "oklch(0.62 0.22 295)" }}
-          >
-            {study.label}
-          </span>
-          <h3
-            className="font-display text-xl font-semibold mt-2 mb-3 transition-colors"
-            style={{ color: "oklch(0.96 0.005 265)" }}
-          >
-            {study.title}
-          </h3>
-          <p className="text-sm leading-relaxed" style={{ color: "oklch(0.60 0.015 265)" }}>
-            {study.description}
-          </p>
-        </div>
-        <div className="flex items-center justify-between">
-          <div className="flex flex-wrap gap-2">
-            {study.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-xs px-2 py-0.5 rounded-md"
-                style={{
-                  background: "oklch(0.13 0.018 265)",
-                  color: "oklch(0.60 0.015 265)",
-                  border: "1px solid oklch(0.20 0.015 265)",
-                }}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-          <div
-            className="flex items-center gap-3 text-xs shrink-0 ml-4"
-            style={{ color: "oklch(0.60 0.015 265)" }}
-          >
-            <span>{study.readTime}</span>
-            <ArrowRight size={14} style={{ color: "oklch(0.62 0.22 295)" }} />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function BlogPostMini({
   post,
