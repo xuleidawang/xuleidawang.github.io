@@ -6,20 +6,6 @@ Blog posts are plain Markdown files — no CMS, no database. To publish, write a
 
 ---
 
-## Tech Stack
-
-| Layer | Technology |
-|---|---|
-| Framework | React 18 + TypeScript |
-| Build tool | Vite |
-| Styling | Tailwind CSS 4 |
-| Routing | React Router 6 |
-| Markdown | react-markdown + remark-gfm + rehype-highlight |
-| Hosting | GitHub Pages |
-| CI/CD | GitHub Actions |
-
----
-
 ## Local Development
 
 ```bash
