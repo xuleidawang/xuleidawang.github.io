@@ -26,8 +26,7 @@ const projects = [
 
 
 const skills = [
-  "C++ / Rust", "GLSL / HLSL", "Vulkan / Metal", "CUDA / OpenCL",
-  "PyTorch", "OpenGL", "DirectX 12", "WebGL / WebGPU",
+  "C++", "GLSL / HLSL", "OpenGL", "DirectX",
   "Real-Time Rendering", "Path Tracing", "Shader Optimization", "GPU Profiling",
 ];
 
