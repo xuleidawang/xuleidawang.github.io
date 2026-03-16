@@ -3,9 +3,10 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "About", href: "/#about" },
-  { label: "Projects", href: "/#projects" },
-  { label: "Contact", href: "/#contact" },
+  { label: "About", href: "/#about", isRoute: false },
+  { label: "Projects", href: "/#projects", isRoute: false },
+  { label: "Blog", href: "/blog", isRoute: true },
+  { label: "Contact", href: "/#contact", isRoute: false },
 ];
 
 export default function Navbar() {
@@ -33,9 +34,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "backdrop-blur-md border-b"
-          : ""
+        scrolled ? "backdrop-blur-md border-b" : ""
       }`}
       style={scrolled ? {
         backgroundColor: "oklch(0.07 0.012 265 / 0.92)",
@@ -58,51 +57,31 @@ export default function Navbar() {
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.label}>
-              <a
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="text-sm transition-colors"
-                style={{ color: "oklch(0.60 0.015 265)" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.96 0.005 265)")}
-                onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.60 0.015 265)")}
-              >
-                {link.label}
-              </a>
+              {link.isRoute ? (
+                <Link
+                  to={link.href}
+                  className="text-sm transition-colors"
+                  style={{ color: "oklch(0.60 0.015 265)" }}
+                  onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.96 0.005 265)")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.60 0.015 265)")}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="text-sm transition-colors"
+                  style={{ color: "oklch(0.60 0.015 265)" }}
+                  onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.96 0.005 265)")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.60 0.015 265)")}
+                >
+                  {link.label}
+                </a>
+              )}
             </li>
           ))}
-          <li>
-            <Link
-              to="/blog"
-              className="text-sm transition-colors"
-              style={{ color: "oklch(0.60 0.015 265)" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.96 0.005 265)")}
-              onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.60 0.015 265)")}
-            >
-              Blog
-            </Link>
-          </li>
         </ul>
-
-        {/* CTA */}
-        <a
-          href="mailto:lei@lei-xu.com"
-          className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
-          style={{
-            backgroundColor: "oklch(0.62 0.22 295 / 0.08)",
-            border: "1px solid oklch(0.62 0.22 295)",
-            color: "oklch(0.62 0.22 295)",
-          }}
-          onMouseEnter={e => {
-            (e.currentTarget as HTMLElement).style.backgroundColor = "oklch(0.62 0.22 295)";
-            (e.currentTarget as HTMLElement).style.color = "white";
-          }}
-          onMouseLeave={e => {
-            (e.currentTarget as HTMLElement).style.backgroundColor = "oklch(0.62 0.22 295 / 0.08)";
-            (e.currentTarget as HTMLElement).style.color = "oklch(0.62 0.22 295)";
-          }}
-        >
-          Get in touch
-        </a>
 
         {/* Mobile toggle */}
         <button
@@ -124,32 +103,29 @@ export default function Navbar() {
             borderColor: "oklch(0.20 0.015 265)",
           }}
         >
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="text-sm py-1 transition-colors"
-              style={{ color: "oklch(0.60 0.015 265)" }}
-            >
-              {link.label}
-            </a>
-          ))}
-          <Link
-            to="/blog"
-            onClick={() => setMobileOpen(false)}
-            className="text-sm py-1 transition-colors"
-            style={{ color: "oklch(0.60 0.015 265)" }}
-          >
-            Blog
-          </Link>
-          <a
-            href="mailto:lei@lei-xu.com"
-            className="text-sm font-medium mt-2"
-            style={{ color: "oklch(0.62 0.22 295)" }}
-          >
-            Get in touch →
-          </a>
+          {navLinks.map((link) =>
+            link.isRoute ? (
+              <Link
+                key={link.label}
+                to={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="text-sm py-1 transition-colors"
+                style={{ color: "oklch(0.60 0.015 265)" }}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="text-sm py-1 transition-colors"
+                style={{ color: "oklch(0.60 0.015 265)" }}
+              >
+                {link.label}
+              </a>
+            )
+          )}
         </div>
       )}
     </header>

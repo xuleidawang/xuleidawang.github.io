@@ -2,10 +2,9 @@ import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const socials = [
-  { icon: Github, label: "GitHub", href: "https://github.com/xuleidawang" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/lei-xu-546048a5/" },
-  { icon: Twitter, label: "X / Twitter", href: "https://x.com/xulei_daniel" },
-  { icon: Mail, label: "daniel_xulei@hotmail.com", href: "mailto:daniel_xulei@hotmail.com" },
+  { icon: Github, label: "GitHub", href: "https://github.com/xuleidawang", isLink: true },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/lei-xu-546048a5/", isLink: true },
+  { icon: Twitter, label: "X / Twitter", href: "https://x.com/xulei_daniel", isLink: true },
 ];
 
 export default function Footer() {
@@ -34,10 +33,10 @@ export default function Footer() {
             </p>
             <ul className="space-y-2">
               {[
-                { label: "Work", href: "/#projects" },
-                { label: "Writing", href: "/#writing" },
                 { label: "About", href: "/#about" },
+                { label: "Projects", href: "/#projects" },
                 { label: "Blog", href: "/blog" },
+                { label: "Contact", href: "/#contact" },
               ].map((link) => (
                 <li key={link.label}>
                   {link.href.startsWith("/") && !link.href.startsWith("/#") ? (
@@ -66,7 +65,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Socials */}
+          {/* Socials + Email */}
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "oklch(0.60 0.015 265)" }}>
               Connect
@@ -76,9 +75,9 @@ export default function Footer() {
                 <a
                   key={label}
                   href={href}
-                  target={href.startsWith("mailto") ? undefined : "_blank"}
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 text-sm transition-colors group"
+                  className="flex items-center gap-2.5 text-sm transition-colors"
                   style={{ color: "oklch(0.60 0.015 265)" }}
                   onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.62 0.22 295)")}
                   onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.60 0.015 265)")}
@@ -87,6 +86,14 @@ export default function Footer() {
                   {label}
                 </a>
               ))}
+              {/* Email — plain text, not a link */}
+              <div
+                className="flex items-center gap-2.5 text-sm"
+                style={{ color: "oklch(0.60 0.015 265)" }}
+              >
+                <Mail size={15} />
+                daniel_xulei@hotmail.com
+              </div>
             </div>
           </div>
         </div>

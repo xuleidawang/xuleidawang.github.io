@@ -488,25 +488,6 @@ export default function Home() {
               >
                 View My Work <ArrowRight size={16} />
               </a>
-              <a
-                href="#contact"
-                onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-sm transition-all duration-200"
-                style={{
-                  border: "1px solid oklch(0.20 0.015 265)",
-                  color: "oklch(0.60 0.015 265)",
-                }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.color = "oklch(0.96 0.005 265)";
-                  (e.currentTarget as HTMLElement).style.borderColor = "oklch(0.62 0.22 295)";
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.color = "oklch(0.60 0.015 265)";
-                  (e.currentTarget as HTMLElement).style.borderColor = "oklch(0.20 0.015 265)";
-                }}
-              >
-                Get in Touch
-              </a>
             </div>
 
 
@@ -533,10 +514,17 @@ export default function Home() {
               View all writing <ArrowRight size={14} />
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
+          <div
+            className="rounded-xl border-2 border-dashed flex flex-col items-center justify-center py-20 text-center"
+            style={{ borderColor: "oklch(0.22 0.015 265)", background: "oklch(0.10 0.012 265)" }}
+          >
+            <Code2 size={32} style={{ color: "oklch(0.35 0.015 265)" }} className="mb-4" />
+            <p className="text-sm font-medium mb-1" style={{ color: "oklch(0.55 0.015 265)" }}>
+              Featured projects coming soon
+            </p>
+            <p className="text-xs" style={{ color: "oklch(0.38 0.010 265)" }}>
+              See README.md for instructions on how to add projects here.
+            </p>
           </div>
         </div>
       </section>
@@ -560,16 +548,18 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Blog posts */}
-          {latestPosts.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {latestPosts.map((post) => (
-                <BlogPostMini key={post.slug} post={post} />
-              ))}
-            </div>
-          ) : (
-            <p className="text-sm" style={{ color: "oklch(0.60 0.015 265)" }}>No posts yet — check back soon.</p>
-          )}
+          <div
+            className="rounded-xl border-2 border-dashed flex flex-col items-center justify-center py-20 text-center"
+            style={{ borderColor: "oklch(0.22 0.015 265)", background: "oklch(0.10 0.012 265)" }}
+          >
+            <BookOpen size={32} style={{ color: "oklch(0.35 0.015 265)" }} className="mb-4" />
+            <p className="text-sm font-medium mb-1" style={{ color: "oklch(0.55 0.015 265)" }}>
+              Blog posts coming soon
+            </p>
+            <p className="text-xs" style={{ color: "oklch(0.38 0.010 265)" }}>
+              See README.md for instructions on how to publish a post.
+            </p>
+          </div>
         </div>
       </section>
 

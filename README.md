@@ -1,8 +1,8 @@
-# Lei Xu — Portfolio & Blog
+# xuleidawang.github.io — Lei Xu's Portfolio
 
-Personal portfolio and blog for [lei-xu.com](https://lei-xu.com), built with **Vite + React + TypeScript + Tailwind CSS 4**.
+Personal portfolio for [lei-xu.com](https://lei-xu.com), built with **Vite + React + TypeScript + Tailwind CSS 4**.
 
-All blog posts are plain Markdown files — no CMS, no database. To publish a post, write a `.md` file, commit it, and push to `main`. GitHub Actions handles the rest.
+Blog posts are plain Markdown files — no CMS, no database. To publish, write a `.md` file, commit it, and push to `master`. GitHub Actions handles the rest.
 
 ---
 
@@ -10,10 +10,10 @@ All blog posts are plain Markdown files — no CMS, no database. To publish a po
 
 | Layer | Technology |
 |---|---|
-| Framework | React 19 + TypeScript |
-| Build tool | Vite 6 |
+| Framework | React 18 + TypeScript |
+| Build tool | Vite |
 | Styling | Tailwind CSS 4 |
-| Routing | React Router 7 |
+| Routing | React Router 6 |
 | Markdown | react-markdown + remark-gfm + rehype-highlight |
 | Hosting | GitHub Pages |
 | CI/CD | GitHub Actions |
@@ -38,7 +38,7 @@ pnpm preview
 
 ---
 
-## Writing a New Blog Post
+## How to Publish a Blog Post
 
 ### 1. Create a Markdown file
 
@@ -69,7 +69,7 @@ Your post content starts here...
 | `title` | Yes | Displayed as the post heading |
 | `date` | Yes | ISO date `YYYY-MM-DD`, used for sorting (newest first) |
 | `excerpt` | Yes | Short summary shown on listing and home page |
-| `tags` | No | Comma-separated list, used for filtering |
+| `tags` | No | Comma-separated list, e.g. `Rendering, CUDA, Research` |
 | `coverImage` | No | URL to a cover image (Unsplash, your own CDN, etc.) |
 
 ### 3. Write your content
@@ -83,7 +83,7 @@ Everything after the closing `---` is your post body. Full **GitHub Flavored Mar
 - Images: `![alt](url)`
 - Links: `[text](url)`
 
-**Code block example with syntax highlighting:**
+**Code block example:**
 
 ````markdown
 ```glsl
@@ -93,29 +93,80 @@ vec3 color = texture(albedoTex, uv).rgb;
 
 Supported languages: `glsl`, `hlsl`, `cpp`, `c`, `python`, `rust`, `js`, `ts`, `bash`, `json`, `yaml`, and [many more](https://highlightjs.org/static/demo/).
 
-### 4. Publish
+### 4. Commit and push
 
 ```bash
+# Stage the new post file
 git add src/posts/my-new-post.md
-git commit -m "Add post: My New Post"
-git push origin main
+
+# Commit with a descriptive message
+git commit -m "Add post: My New Post Title"
+
+# Push to master — GitHub Actions auto-deploys within ~2 minutes
+git push origin master
 ```
 
-GitHub Actions will automatically build and deploy to GitHub Pages within ~2 minutes.
+Your post will appear at:
+- **Blog listing:** `https://lei-xu.com/blog`
+- **Post page:** `https://lei-xu.com/blog/my-new-post`
 
 ---
 
-## Updating Portfolio Content
+## How to Add a Featured Project
 
-All portfolio content (projects, case studies, testimonials, work history, skills) lives in `src/pages/Home.tsx`. Open that file and edit the data arrays at the top:
+Featured projects are defined in the `projects` array at the top of `src/pages/Home.tsx`.
 
-- **`projects`** — the 3 featured project cards
-- **`caseStudies`** — the horizontal case study cards
-- **`testimonials`** — the carousel quotes
-- **`skills`** — the skills tag cloud
-- Work history is in the JSX inline (search for `"2022 – Present"`)
+### 1. Open the file
 
-To update social links and contact email, edit `src/components/Footer.tsx` and `src/components/Navbar.tsx`.
+```bash
+code src/pages/Home.tsx
+```
+
+### 2. Find the `projects` array (around line 13)
+
+```ts
+const projects = [
+  // ... existing or placeholder entries
+];
+```
+
+### 3. Add a new project object
+
+```ts
+{
+  id: 1,                            // Unique number; increment from the last
+  title: "Your Project Title",
+  description: "A short description of what the project does and why it matters.",
+  tags: ["C++", "Vulkan", "GLSL"],  // Tech stack tags shown as badges
+  icon: <Zap size={20} />,          // Pick one: Zap, Layers, Cpu, Code2, Star
+  accent: "#a78bfa",                // Card accent colour:
+                                    //   purple  → "#a78bfa"
+                                    //   indigo  → "#818cf8"
+                                    //   blue    → "#60a5fa"
+  github: "https://github.com/xuleidawang/your-repo",  // Set "" to hide
+  demo: "https://your-demo-url.com",                   // Set "" to hide
+}
+```
+
+### 4. Replace the placeholder with the real project grid
+
+When you're ready to show real projects, find the placeholder `<div>` in the Projects section (search for `"Featured projects coming soon"`) and replace it with:
+
+```tsx
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {projects.map((project) => (
+    <ProjectCard key={project.id} project={project} />
+  ))}
+</div>
+```
+
+### 5. Commit and push
+
+```bash
+git add src/pages/Home.tsx
+git commit -m "Add featured project: Your Project Title"
+git push origin master
+```
 
 ---
 
@@ -123,35 +174,49 @@ To update social links and contact email, edit `src/components/Footer.tsx` and `
 
 Deployment is fully automated via GitHub Actions (`.github/workflows/deploy.yml`).
 
-**One-time setup (already done):**
+**One-time setup:**
 
 1. Go to your repo **Settings → Pages**
-2. Set **Source** to `GitHub Actions`
+2. Set **Source** to **GitHub Actions**
 3. Your `CNAME` file (`public/CNAME`) already contains `lei-xu.com`
-4. Make sure your DNS has a `CNAME` record: `www` → `xuleidawang.github.io` and an `A` record for the apex domain pointing to GitHub's IPs:
-   ```
-   185.199.108.153
-   185.199.109.153
-   185.199.110.153
-   185.199.111.153
-   ```
+4. Point your DNS to GitHub Pages:
+   - `CNAME` record: `www` → `xuleidawang.github.io`
+   - `A` records for the apex domain:
+     ```
+     185.199.108.153
+     185.199.109.153
+     185.199.110.153
+     185.199.111.153
+     ```
 
-After that, every push to `main` auto-deploys.
+After that, every `git push origin master` auto-deploys within ~2 minutes.
+
+---
+
+## Updating Personal Info
+
+| What to change | File | Where to look |
+|---|---|---|
+| Name, role, tagline | `src/pages/Home.tsx` | Hero section (~line 458) |
+| About bio | `src/pages/Home.tsx` | About section (~line 580) |
+| Skills list | `src/pages/Home.tsx` | `skills` array (~line 110) |
+| Work history | `src/pages/Home.tsx` | Experience array (~line 685) |
+| Social links | `src/components/Footer.tsx` | `socials` array (line 4) |
+| Email address | `src/components/Footer.tsx` | Plain text in Connect section |
+| Nav logo text | `src/components/Navbar.tsx` | Line 54 |
+| Custom domain | `public/CNAME` | Replace with your domain |
 
 ---
 
 ## Project Structure
 
 ```
-lei-xu-static/
 ├── public/
 │   ├── CNAME              ← Custom domain (lei-xu.com)
 │   ├── 404.html           ← GitHub Pages SPA routing fallback
 │   └── favicon.svg
 ├── src/
 │   ├── posts/             ← ✏️  Your blog posts go here (.md files)
-│   │   ├── real-time-global-illumination.md
-│   │   └── shader-optimization-tips.md
 │   ├── pages/
 │   │   ├── Home.tsx       ← Portfolio sections (edit content here)
 │   │   ├── Blog.tsx       ← Blog listing page
@@ -165,10 +230,9 @@ lei-xu-static/
 │   ├── main.tsx           ← Entry point
 │   └── index.css          ← Global theme & CSS variables
 ├── .github/workflows/
-│   └── deploy.yml         ← Auto-deploy on push to main
+│   └── deploy.yml         ← Auto-deploy on push to master
 ├── index.html
 ├── vite.config.ts
-├── tsconfig.json
 └── package.json
 ```
 
