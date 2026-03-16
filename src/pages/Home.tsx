@@ -495,74 +495,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Projects ──────────────────────────────────────────────────────── */}
-      <section id="projects" className="section-padding" style={{ borderTop: "1px solid oklch(0.20 0.015 265)" }}>
-        <div className="max-w-6xl mx-auto px-6">
-          <SectionLabel>Featured Work</SectionLabel>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold max-w-lg" style={{ color: "oklch(0.96 0.005 265)" }}>
-              Projects that push the{" "}
-              <span className="text-gradient-purple">boundaries</span>
-            </h2>
-            <Link
-              to="/blog"
-              className="text-sm flex items-center gap-1.5 transition-colors shrink-0"
-              style={{ color: "oklch(0.62 0.22 295)" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.96 0.005 265)")}
-              onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.62 0.22 295)")}
-            >
-              View all writing <ArrowRight size={14} />
-            </Link>
-          </div>
-          <div
-            className="rounded-xl border-2 border-dashed flex flex-col items-center justify-center py-20 text-center"
-            style={{ borderColor: "oklch(0.22 0.015 265)", background: "oklch(0.10 0.012 265)" }}
-          >
-            <Code2 size={32} style={{ color: "oklch(0.35 0.015 265)" }} className="mb-4" />
-            <p className="text-sm font-medium mb-1" style={{ color: "oklch(0.55 0.015 265)" }}>
-              Featured projects coming soon
-            </p>
-            <p className="text-xs" style={{ color: "oklch(0.38 0.010 265)" }}>
-              See README.md for instructions on how to add projects here.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Writing & Research ────────────────────────────────────────────── */}
-      <section id="writing" className="section-padding" style={{ borderTop: "1px solid oklch(0.20 0.015 265)" }}>
-        <div className="max-w-6xl mx-auto px-6">
-          <SectionLabel>Writing & Research</SectionLabel>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold max-w-lg" style={{ color: "oklch(0.96 0.005 265)" }}>
-              <span className="text-gradient-purple">Blog</span>
-            </h2>
-            <Link
-              to="/blog"
-              className="text-sm flex items-center gap-1.5 transition-colors shrink-0"
-              style={{ color: "oklch(0.62 0.22 295)" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.96 0.005 265)")}
-              onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.62 0.22 295)")}
-            >
-              All posts <ArrowRight size={14} />
-            </Link>
-          </div>
-
-          <div
-            className="rounded-xl border-2 border-dashed flex flex-col items-center justify-center py-20 text-center"
-            style={{ borderColor: "oklch(0.22 0.015 265)", background: "oklch(0.10 0.012 265)" }}
-          >
-            <BookOpen size={32} style={{ color: "oklch(0.35 0.015 265)" }} className="mb-4" />
-            <p className="text-sm font-medium mb-1" style={{ color: "oklch(0.55 0.015 265)" }}>
-              Blog posts coming soon
-            </p>
-            <p className="text-xs" style={{ color: "oklch(0.38 0.010 265)" }}>
-              See README.md for instructions on how to publish a post.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* ── About / Skills ────────────────────────────────────────────────── */}
       <section id="about" className="section-padding" style={{ borderTop: "1px solid oklch(0.20 0.015 265)" }}>
         <div className="max-w-6xl mx-auto px-6">
@@ -653,6 +585,73 @@ export default function Home() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Projects ──────────────────────────────────────────────────────── */}
+      <section id="projects" className="section-padding" style={{ borderTop: "1px solid oklch(0.20 0.015 265)" }}>
+        <div className="max-w-6xl mx-auto px-6">
+          <SectionLabel>Featured Work</SectionLabel>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+            <h2 className="font-display text-3xl md:text-4xl font-bold max-w-lg" style={{ color: "oklch(0.96 0.005 265)" }}>
+              Projects that push the{" "}
+              <span className="text-gradient-purple">boundaries</span>
+            </h2>
+            <Link
+              to="/blog"
+              className="text-sm flex items-center gap-1.5 transition-colors shrink-0"
+              style={{ color: "oklch(0.62 0.22 295)" }}
+              onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.96 0.005 265)")}
+              onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.62 0.22 295)")}
+            >
+              View all writing <ArrowRight size={14} />
+            </Link>
+          </div>
+          <div
+            className="rounded-xl border-2 border-dashed flex flex-col items-center justify-center py-20 text-center"
+            style={{ borderColor: "oklch(0.22 0.015 265)", background: "oklch(0.10 0.012 265)" }}
+          >
+            <Code2 size={32} style={{ color: "oklch(0.35 0.015 265)" }} className="mb-4" />
+            <p className="text-sm font-medium mb-1" style={{ color: "oklch(0.55 0.015 265)" }}>
+              Featured projects coming soon
+            </p>
+            <p className="text-xs" style={{ color: "oklch(0.38 0.010 265)" }}>
+              See README.md for instructions on how to add projects here.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Writing & Research ────────────────────────────────────────────── */}
+      <section id="writing" className="section-padding" style={{ borderTop: "1px solid oklch(0.20 0.015 265)" }}>
+        <div className="max-w-6xl mx-auto px-6">
+          <SectionLabel>Writing & Research</SectionLabel>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+            <h2 className="font-display text-3xl md:text-4xl font-bold max-w-lg" style={{ color: "oklch(0.96 0.005 265)" }}>
+              <span className="text-gradient-purple">Blog</span>
+            </h2>
+            <Link
+              to="/blog"
+              className="text-sm flex items-center gap-1.5 transition-colors shrink-0"
+              style={{ color: "oklch(0.62 0.22 295)" }}
+              onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.96 0.005 265)")}
+              onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.62 0.22 295)")}
+            >
+              All posts <ArrowRight size={14} />
+            </Link>
+          </div>
+          <div
+            className="rounded-xl border-2 border-dashed flex flex-col items-center justify-center py-20 text-center"
+            style={{ borderColor: "oklch(0.22 0.015 265)", background: "oklch(0.10 0.012 265)" }}
+          >
+            <BookOpen size={32} style={{ color: "oklch(0.35 0.015 265)" }} className="mb-4" />
+            <p className="text-sm font-medium mb-1" style={{ color: "oklch(0.55 0.015 265)" }}>
+              Blog posts coming soon
+            </p>
+            <p className="text-xs" style={{ color: "oklch(0.38 0.010 265)" }}>
+              See README.md for instructions on how to publish a post.
+            </p>
           </div>
         </div>
       </section>
