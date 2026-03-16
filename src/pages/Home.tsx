@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  ArrowRight, Github, ExternalLink, ChevronLeft, ChevronRight,
-  Star, Code2, Cpu, Layers, Zap, BookOpen, Calendar,
+  ArrowRight, Github, ExternalLink,
+  Code2, Zap, BookOpen, Calendar,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -13,94 +12,18 @@ import { getAllPosts } from "@/lib/posts";
 const projects = [
   {
     id: 1,
-    title: "Real-Time Global Illumination Engine",
+    title: "Test Project",
     description:
-      "A GPU-accelerated path tracing renderer achieving real-time performance through novel denoising algorithms and adaptive sampling strategies.",
-    tags: ["C++", "CUDA", "OpenGL", "GLSL"],
+      "This is a test project entry. Replace this with your real project title, description, tags, and links.",
+    tags: ["C++", "GLSL"],
     icon: <Zap size={20} />,
     accent: "#a78bfa",
-    github: "https://github.com/xuleidawang",
-    demo: "https://lei-xu.com",
-  },
-  {
-    id: 2,
-    title: "Procedural Terrain Generation",
-    description:
-      "Research into multi-scale noise functions and erosion simulation for photorealistic terrain synthesis, published at SIGGRAPH 2024.",
-    tags: ["Python", "WebGL", "WASM", "Rust"],
-    icon: <Layers size={20} />,
-    accent: "#818cf8",
-    github: "https://github.com/xuleidawang",
-    demo: "https://lei-xu.com",
-  },
-  {
-    id: 3,
-    title: "Neural Texture Compression",
-    description:
-      "Leveraging neural networks to achieve 10x compression ratios on PBR texture atlases while maintaining perceptual quality for game engines.",
-    tags: ["PyTorch", "ONNX", "DirectX 12", "C#"],
-    icon: <Cpu size={20} />,
-    accent: "#60a5fa",
-    github: "https://github.com/xuleidawang",
-    demo: "https://lei-xu.com",
+    github: "",
+    demo: "",
   },
 ];
 
-const caseStudies = [
-  {
-    id: 1,
-    label: "Case Study 01",
-    title: "Optimizing Shader Pipelines for AAA Game Titles",
-    description:
-      "A deep dive into the profiling, analysis, and optimization of complex shader pipelines that reduced GPU frame time by 40% across three major game titles.",
-    tags: ["Performance", "HLSL", "Vulkan"],
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
-    readTime: "12 min read",
-  },
-  {
-    id: 2,
-    label: "Case Study 02",
-    title: "Building a Cross-Platform Graphics Abstraction Layer",
-    description:
-      "Designing and implementing a unified graphics API that transparently targets Vulkan, Metal, and DirectX 12 with zero runtime overhead.",
-    tags: ["Architecture", "C++", "Cross-Platform"],
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
-    readTime: "18 min read",
-  },
-];
 
-const testimonials = [
-  {
-    id: 1,
-    quote:
-      "Lei's work on our rendering pipeline was transformative. The optimizations delivered were beyond what we thought achievable in the timeframe — a rare combination of deep technical knowledge and practical execution.",
-    name: "Sarah Chen",
-    role: "Lead Graphics Engineer",
-    company: "Naughty Dog",
-    initials: "SC",
-    color: "#a78bfa",
-  },
-  {
-    id: 2,
-    quote:
-      "Working with Lei on the SIGGRAPH paper was an incredible experience. Their ability to translate complex mathematical concepts into elegant, efficient code is unmatched. Highly recommend for any research collaboration.",
-    name: "Dr. Marcus Webb",
-    role: "Associate Professor",
-    company: "Stanford University",
-    initials: "MW",
-    color: "#818cf8",
-  },
-  {
-    id: 3,
-    quote:
-      "Lei joined our team mid-project and immediately made an impact. The neural texture compression system they built is now a core part of our asset pipeline, saving us hours of build time every day.",
-    name: "Priya Nair",
-    role: "Technical Director",
-    company: "Epic Games",
-    initials: "PN",
-    color: "#60a5fa",
-  },
-];
 
 const skills = [
   "C++ / Rust", "GLSL / HLSL", "Vulkan / Metal", "CUDA / OpenCL",
@@ -310,117 +233,7 @@ function BlogPostMini({
   );
 }
 
-function TestimonialCarousel() {
-  const [current, setCurrent] = useState(0);
-  const [animating, setAnimating] = useState(false);
 
-  const go = (dir: number) => {
-    if (animating) return;
-    setAnimating(true);
-    setTimeout(() => {
-      setCurrent((c) => (c + dir + testimonials.length) % testimonials.length);
-      setAnimating(false);
-    }, 200);
-  };
-
-  const t = testimonials[current]!;
-
-  return (
-    <div className="relative">
-      <div
-        className={`card-dark p-8 md:p-10 transition-opacity duration-200 ${animating ? "opacity-0" : "opacity-100"}`}
-      >
-        <div className="flex gap-1 mb-6">
-          {[...Array(5)].map((_, i) => (
-            <Star key={i} size={14} fill={t.color} color={t.color} />
-          ))}
-        </div>
-        <blockquote
-          className="text-base md:text-lg leading-relaxed mb-8 italic"
-          style={{ color: "oklch(0.96 0.005 265)" }}
-        >
-          "{t.quote}"
-        </blockquote>
-        <div className="flex items-center gap-4">
-          <div
-            className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0"
-            style={{ background: `linear-gradient(135deg, ${t.color}, ${t.color}88)` }}
-          >
-            {t.initials}
-          </div>
-          <div>
-            <p className="font-semibold text-sm" style={{ color: "oklch(0.96 0.005 265)" }}>
-              {t.name}
-            </p>
-            <p className="text-xs" style={{ color: "oklch(0.60 0.015 265)" }}>
-              {t.role} · {t.company}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex items-center justify-between mt-6">
-        <div className="flex gap-2">
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                if (!animating) {
-                  setAnimating(true);
-                  setTimeout(() => { setCurrent(i); setAnimating(false); }, 200);
-                }
-              }}
-              className="h-1.5 rounded-full transition-all duration-300"
-              style={{
-                width: i === current ? "1.5rem" : "0.375rem",
-                background: i === current ? "oklch(0.62 0.22 295)" : "oklch(0.20 0.015 265)",
-              }}
-              aria-label={`Go to testimonial ${i + 1}`}
-            />
-          ))}
-        </div>
-        <div className="flex gap-2">
-          <button
-            onClick={() => go(-1)}
-            className="w-9 h-9 rounded-lg flex items-center justify-center transition-all"
-            style={{
-              border: "1px solid oklch(0.20 0.015 265)",
-              color: "oklch(0.60 0.015 265)",
-            }}
-            onMouseEnter={e => {
-              (e.currentTarget as HTMLElement).style.borderColor = "oklch(0.62 0.22 295)";
-              (e.currentTarget as HTMLElement).style.color = "oklch(0.96 0.005 265)";
-            }}
-            onMouseLeave={e => {
-              (e.currentTarget as HTMLElement).style.borderColor = "oklch(0.20 0.015 265)";
-              (e.currentTarget as HTMLElement).style.color = "oklch(0.60 0.015 265)";
-            }}
-          >
-            <ChevronLeft size={16} />
-          </button>
-          <button
-            onClick={() => go(1)}
-            className="w-9 h-9 rounded-lg flex items-center justify-center transition-all"
-            style={{
-              border: "1px solid oklch(0.20 0.015 265)",
-              color: "oklch(0.60 0.015 265)",
-            }}
-            onMouseEnter={e => {
-              (e.currentTarget as HTMLElement).style.borderColor = "oklch(0.62 0.22 295)";
-              (e.currentTarget as HTMLElement).style.color = "oklch(0.96 0.005 265)";
-            }}
-            onMouseLeave={e => {
-              (e.currentTarget as HTMLElement).style.borderColor = "oklch(0.20 0.015 265)";
-              (e.currentTarget as HTMLElement).style.color = "oklch(0.60 0.015 265)";
-            }}
-          >
-            <ChevronRight size={16} />
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 // ─── Page ──────────────────────────────────────────────────────────────────────
 
@@ -608,17 +421,10 @@ export default function Home() {
               View all writing <ArrowRight size={14} />
             </Link>
           </div>
-          <div
-            className="rounded-xl border-2 border-dashed flex flex-col items-center justify-center py-20 text-center"
-            style={{ borderColor: "oklch(0.22 0.015 265)", background: "oklch(0.10 0.012 265)" }}
-          >
-            <Code2 size={32} style={{ color: "oklch(0.35 0.015 265)" }} className="mb-4" />
-            <p className="text-sm font-medium mb-1" style={{ color: "oklch(0.55 0.015 265)" }}>
-              Featured projects coming soon
-            </p>
-            <p className="text-xs" style={{ color: "oklch(0.38 0.010 265)" }}>
-              See README.md for instructions on how to add projects here.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
           </div>
         </div>
       </section>
@@ -641,18 +447,44 @@ export default function Home() {
               All posts <ArrowRight size={14} />
             </Link>
           </div>
-          <div
-            className="rounded-xl border-2 border-dashed flex flex-col items-center justify-center py-20 text-center"
-            style={{ borderColor: "oklch(0.22 0.015 265)", background: "oklch(0.10 0.012 265)" }}
-          >
-            <BookOpen size={32} style={{ color: "oklch(0.35 0.015 265)" }} className="mb-4" />
-            <p className="text-sm font-medium mb-1" style={{ color: "oklch(0.55 0.015 265)" }}>
-              Blog posts coming soon
-            </p>
-            <p className="text-xs" style={{ color: "oklch(0.38 0.010 265)" }}>
-              See README.md for instructions on how to publish a post.
-            </p>
-          </div>
+          {latestPosts.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {latestPosts.map((post) => (
+                <Link
+                  key={post.slug}
+                  to={`/blog/${post.slug}`}
+                  className="card-dark group p-6 flex flex-col gap-3 h-full"
+                >
+                  <div className="flex items-center gap-2 text-xs" style={{ color: "oklch(0.62 0.22 295)" }}>
+                    <Calendar size={12} />
+                    {new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+                  </div>
+                  <h3 className="font-display text-lg font-semibold" style={{ color: "oklch(0.96 0.005 265)" }}>
+                    {post.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed flex-1" style={{ color: "oklch(0.60 0.015 265)" }}>
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center gap-1.5 text-xs mt-1" style={{ color: "oklch(0.62 0.22 295)" }}>
+                    Read more <ArrowRight size={12} />
+                  </div>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div
+              className="rounded-xl border-2 border-dashed flex flex-col items-center justify-center py-20 text-center"
+              style={{ borderColor: "oklch(0.22 0.015 265)", background: "oklch(0.10 0.012 265)" }}
+            >
+              <BookOpen size={32} style={{ color: "oklch(0.35 0.015 265)" }} className="mb-4" />
+              <p className="text-sm font-medium mb-1" style={{ color: "oklch(0.55 0.015 265)" }}>
+                No posts yet
+              </p>
+              <p className="text-xs" style={{ color: "oklch(0.38 0.010 265)" }}>
+                See README.md for instructions on how to publish a post.
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
