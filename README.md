@@ -79,6 +79,85 @@ vec3 color = texture(albedoTex, uv).rgb;
 
 Supported languages: `glsl`, `hlsl`, `cpp`, `c`, `python`, `rust`, `js`, `ts`, `bash`, `json`, `yaml`, and [many more](https://highlightjs.org/static/demo/).
 
+### Embedding Media in a Post
+
+#### Images
+
+Use standard Markdown image syntax. You can use any public URL, or place a file in `public/images/` and reference it with an absolute path.
+
+```markdown
+<!-- From a public URL -->
+![Alt text](https://images.unsplash.com/photo-xxxxx?w=1200&q=80)
+
+<!-- From your own repo: place the file in public/images/ -->
+![Alt text](/images/my-screenshot.png)
+```
+
+To add a local image:
+```bash
+# Copy your image into public/images/
+mkdir -p public/images
+cp ~/Desktop/my-screenshot.png public/images/
+
+# Reference it in your post
+# ![My screenshot](/images/my-screenshot.png)
+
+# Commit both the image and the post
+git add public/images/my-screenshot.png src/posts/my-post.md
+git commit -m "Add post with screenshot"
+git push origin master
+```
+
+#### GIFs
+
+GIFs work exactly like images — just point to a `.gif` URL:
+
+```markdown
+![Demo animation](https://media.giphy.com/media/xxxxx/giphy.gif)
+```
+
+#### YouTube Videos
+
+Paste an HTML `<iframe>` directly in your Markdown — it renders in the post page:
+
+```html
+<iframe
+  width="100%"
+  height="420"
+  src="https://www.youtube.com/embed/VIDEO_ID"
+  title="Video title"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="border-radius: 8px;"
+></iframe>
+```
+
+Replace `VIDEO_ID` with the ID from the YouTube URL (e.g. `dQw4w9WgXcQ` from `youtube.com/watch?v=dQw4w9WgXcQ`).
+
+#### Self-Hosted / Direct Video Files
+
+Upload your video to a public location (GitHub Releases, Google Drive direct link, or any CDN), then use an HTML `<video>` tag:
+
+```html
+<video width="100%" controls style="border-radius: 8px;">
+  <source src="https://your-cdn.com/demo.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+```
+
+**Quick reference:**
+
+| Media type | Syntax |
+|---|---|
+| Image (URL) | `![alt](https://...)` |
+| Image (local) | `![alt](/images/file.png)` — place file in `public/images/` |
+| GIF | Same as image, `.gif` extension |
+| YouTube | `<iframe src="https://www.youtube.com/embed/VIDEO_ID" ...>` |
+| Self-hosted video | `<video controls><source src="..." type="video/mp4"></video>` |
+
+See `src/posts/test-blog-post.md` for a live working example of each.
+
 ### 4. Commit and push
 
 ```bash
