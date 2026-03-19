@@ -13,7 +13,7 @@ export default function Blog() {
   const filtered = activeTag ? allPosts.filter((p) => p.tags.includes(activeTag)) : allPosts;
 
   return (
-    <div className="min-h-screen" style={{ background: "oklch(0.07 0.012 265)", color: "oklch(0.96 0.005 265)" }}>
+    <div className="min-h-screen" style={{ background: "oklch(0.98 0.003 265)", color: "oklch(0.12 0.015 265)" }}>
       <Navbar />
 
       <main className="max-w-4xl mx-auto px-6 pt-28 pb-20">
@@ -26,16 +26,16 @@ export default function Blog() {
               background: "oklch(0.62 0.22 295 / 0.06)",
             }}
           >
-            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "oklch(0.62 0.22 295)" }} />
-            <span className="text-xs font-medium tracking-widest uppercase" style={{ color: "oklch(0.62 0.22 295)" }}>
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "oklch(0.52 0.22 295)" }} />
+            <span className="text-xs font-medium tracking-widest uppercase" style={{ color: "oklch(0.52 0.22 295)" }}>
               Writing
             </span>
           </div>
-          <h1 className="font-display text-4xl md:text-5xl font-bold mb-4" style={{ color: "oklch(0.96 0.005 265)" }}>
+          <h1 className="font-display text-4xl md:text-5xl font-bold mb-4" style={{ color: "oklch(0.12 0.015 265)" }}>
             Blog &{" "}
             <span className="text-gradient-purple">Notes</span>
           </h1>
-          <p className="text-lg leading-relaxed max-w-xl" style={{ color: "oklch(0.60 0.015 265)" }}>
+          <p className="text-lg leading-relaxed max-w-xl" style={{ color: "oklch(0.45 0.012 265)" }}>
             Thoughts on graphics programming, rendering research, and the craft of building visual systems.
           </p>
         </div>
@@ -47,9 +47,9 @@ export default function Blog() {
               onClick={() => setActiveTag(null)}
               className="text-xs px-3 py-1.5 rounded-full transition-all"
               style={{
-                background: activeTag === null ? "oklch(0.62 0.22 295)" : "oklch(0.10 0.015 265)",
-                color: activeTag === null ? "white" : "oklch(0.60 0.015 265)",
-                border: `1px solid ${activeTag === null ? "oklch(0.62 0.22 295)" : "oklch(0.20 0.015 265)"}`,
+                background: activeTag === null ? "oklch(0.52 0.22 295)" : "oklch(0.97 0.004 265)",
+                color: activeTag === null ? "white" : "oklch(0.45 0.012 265)",
+                border: `1px solid ${activeTag === null ? "oklch(0.52 0.22 295)" : "oklch(0.88 0.008 265)"}`,
               }}
             >
               All
@@ -60,9 +60,9 @@ export default function Blog() {
                 onClick={() => setActiveTag(tag === activeTag ? null : tag)}
                 className="text-xs px-3 py-1.5 rounded-full transition-all"
                 style={{
-                  background: activeTag === tag ? "oklch(0.62 0.22 295)" : "oklch(0.10 0.015 265)",
-                  color: activeTag === tag ? "white" : "oklch(0.60 0.015 265)",
-                  border: `1px solid ${activeTag === tag ? "oklch(0.62 0.22 295)" : "oklch(0.20 0.015 265)"}`,
+                  background: activeTag === tag ? "oklch(0.52 0.22 295)" : "oklch(0.97 0.004 265)",
+                  color: activeTag === tag ? "white" : "oklch(0.45 0.012 265)",
+                  border: `1px solid ${activeTag === tag ? "oklch(0.52 0.22 295)" : "oklch(0.88 0.008 265)"}`,
                 }}
               >
                 {tag}
@@ -74,10 +74,10 @@ export default function Blog() {
         {/* Posts */}
         {filtered.length === 0 ? (
           <div className="text-center py-20">
-            <p className="text-lg font-display font-semibold mb-2" style={{ color: "oklch(0.96 0.005 265)" }}>
+            <p className="text-lg font-display font-semibold mb-2" style={{ color: "oklch(0.12 0.015 265)" }}>
               No posts yet
             </p>
-            <p className="text-sm" style={{ color: "oklch(0.60 0.015 265)" }}>
+            <p className="text-sm" style={{ color: "oklch(0.45 0.012 265)" }}>
               Check back soon — posts will appear here once published.
             </p>
           </div>
@@ -111,7 +111,7 @@ export default function Blog() {
                                 className="text-xs px-2 py-0.5 rounded-md"
                                 style={{
                                   background: "oklch(0.62 0.22 295 / 0.08)",
-                                  color: "oklch(0.62 0.22 295)",
+                                  color: "oklch(0.52 0.22 295)",
                                   border: "1px solid oklch(0.62 0.22 295 / 0.2)",
                                 }}
                               >
@@ -122,21 +122,21 @@ export default function Blog() {
                         )}
                         <h2
                           className="font-display text-xl font-semibold mb-2 transition-colors"
-                          style={{ color: "oklch(0.96 0.005 265)" }}
+                          style={{ color: "oklch(0.12 0.015 265)" }}
                         >
                           {post.title}
                         </h2>
                         {post.excerpt && (
-                          <p className="text-sm leading-relaxed line-clamp-2" style={{ color: "oklch(0.60 0.015 265)" }}>
+                          <p className="text-sm leading-relaxed line-clamp-2" style={{ color: "oklch(0.45 0.012 265)" }}>
                             {post.excerpt}
                           </p>
                         )}
                       </div>
                       <div
                         className="flex items-center justify-between pt-3 border-t"
-                        style={{ borderColor: "oklch(0.20 0.015 265)" }}
+                        style={{ borderColor: "oklch(0.88 0.008 265)" }}
                       >
-                        <div className="flex items-center gap-4 text-xs" style={{ color: "oklch(0.60 0.015 265)" }}>
+                        <div className="flex items-center gap-4 text-xs" style={{ color: "oklch(0.45 0.012 265)" }}>
                           {date && (
                             <span className="flex items-center gap-1.5">
                               <Calendar size={12} /> {date}
@@ -150,7 +150,7 @@ export default function Blog() {
                         </div>
                         <span
                           className="text-xs flex items-center gap-1 transition-all group-hover:gap-2"
-                          style={{ color: "oklch(0.62 0.22 295)" }}
+                          style={{ color: "oklch(0.52 0.22 295)" }}
                         >
                           Read more <ArrowRight size={12} />
                         </span>

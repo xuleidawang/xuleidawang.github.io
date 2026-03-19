@@ -53,11 +53,11 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
       <div className="flex-1">
         <h3
           className="font-display text-lg font-semibold mb-2 transition-colors"
-          style={{ color: "oklch(0.96 0.005 265)" }}
+          style={{ color: "oklch(0.12 0.015 265)" }}
         >
           {project.title}
         </h3>
-        <p className="text-sm leading-relaxed" style={{ color: "oklch(0.60 0.015 265)" }}>
+        <p className="text-sm leading-relaxed" style={{ color: "oklch(0.45 0.012 265)" }}>
           {project.description}
         </p>
       </div>
@@ -67,9 +67,9 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
             key={tag}
             className="text-xs px-2 py-0.5 rounded-md"
             style={{
-              background: "oklch(0.13 0.018 265)",
-              color: "oklch(0.60 0.015 265)",
-              border: "1px solid oklch(0.20 0.015 265)",
+              background: "oklch(0.93 0.006 265)",
+              color: "oklch(0.45 0.012 265)",
+              border: "1px solid oklch(0.88 0.008 265)",
             }}
           >
             {tag}
@@ -78,16 +78,16 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
       </div>
       <div
         className="flex items-center gap-4 pt-2 border-t"
-        style={{ borderColor: "oklch(0.20 0.015 265)" }}
+        style={{ borderColor: "oklch(0.88 0.008 265)" }}
       >
         <a
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-1.5 text-xs transition-colors"
-          style={{ color: "oklch(0.60 0.015 265)" }}
-          onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.96 0.005 265)")}
-          onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.60 0.015 265)")}
+          style={{ color: "oklch(0.45 0.012 265)" }}
+          onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.12 0.015 265)")}
+          onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.45 0.012 265)")}
         >
           <Github size={14} /> Source
         </a>
@@ -96,9 +96,9 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-1.5 text-xs transition-colors"
-          style={{ color: "oklch(0.62 0.22 295)" }}
+          style={{ color: "oklch(0.52 0.22 295)" }}
           onMouseEnter={e => (e.currentTarget.style.color = "white")}
-          onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.62 0.22 295)")}
+          onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.52 0.22 295)")}
         >
           <ExternalLink size={14} /> Live Demo
         </a>
@@ -136,7 +136,7 @@ function BlogPostMini({
                 className="text-xs px-2 py-0.5 rounded-md"
                 style={{
                   background: "oklch(0.62 0.22 295 / 0.08)",
-                  color: "oklch(0.62 0.22 295)",
+                  color: "oklch(0.52 0.22 295)",
                   border: "1px solid oklch(0.62 0.22 295 / 0.2)",
                 }}
               >
@@ -147,26 +147,26 @@ function BlogPostMini({
         )}
         <h3
           className="font-display text-base font-semibold transition-colors line-clamp-2 flex-1"
-          style={{ color: "oklch(0.96 0.005 265)" }}
+          style={{ color: "oklch(0.12 0.015 265)" }}
         >
           {post.title}
         </h3>
         {post.excerpt && (
-          <p className="text-xs leading-relaxed line-clamp-2" style={{ color: "oklch(0.60 0.015 265)" }}>
+          <p className="text-xs leading-relaxed line-clamp-2" style={{ color: "oklch(0.45 0.012 265)" }}>
             {post.excerpt}
           </p>
         )}
         <div
           className="flex items-center justify-between pt-2 border-t"
-          style={{ borderColor: "oklch(0.20 0.015 265)" }}
+          style={{ borderColor: "oklch(0.88 0.008 265)" }}
         >
-          <div className="flex items-center gap-1.5 text-xs" style={{ color: "oklch(0.60 0.015 265)" }}>
+          <div className="flex items-center gap-1.5 text-xs" style={{ color: "oklch(0.45 0.012 265)" }}>
             <Calendar size={11} />
             <span>{date}</span>
           </div>
           <span
             className="text-xs flex items-center gap-1"
-            style={{ color: "oklch(0.62 0.22 295)" }}
+            style={{ color: "oklch(0.52 0.22 295)" }}
           >
             Read <ArrowRight size={11} />
           </span>
@@ -185,47 +185,47 @@ export default function Home() {
   const latestPosts = allPosts.slice(0, 3);
 
   return (
-    <div className="min-h-screen" style={{ background: "oklch(0.07 0.012 265)", color: "oklch(0.96 0.005 265)" }}>
+    <div className="min-h-screen" style={{ background: "oklch(0.98 0.003 265)", color: "oklch(0.12 0.015 265)" }}>
       <Navbar />
 
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background grid */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.06]"
           style={{
             backgroundImage:
-              "linear-gradient(oklch(0.20 0.015 265) 1px, transparent 1px), linear-gradient(90deg, oklch(0.20 0.015 265) 1px, transparent 1px)",
+              "linear-gradient(oklch(0.88 0.008 265) 1px, transparent 1px), linear-gradient(90deg, oklch(0.88 0.008 265) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
         {/* Glow orbs */}
         <div
           className="absolute top-1/4 left-1/3 w-96 h-96 rounded-full blur-[120px] opacity-20 pointer-events-none"
-          style={{ background: "radial-gradient(circle, oklch(0.62 0.22 295), transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, oklch(0.52 0.22 295), transparent 70%)" }}
         />
         <div
           className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full blur-[100px] opacity-10 pointer-events-none"
-          style={{ background: "radial-gradient(circle, oklch(0.38 0.12 255), transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, oklch(0.32 0.14 255), transparent 70%)" }}
         />
 
         <div className="max-w-6xl mx-auto px-6 relative z-10 pt-24 pb-16 w-full">
           <div className="max-w-3xl">
             <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 animate-fade-in-up">
-              <span style={{ color: "oklch(0.96 0.005 265)" }}>Lei</span>{" "}
+              <span style={{ color: "oklch(0.12 0.015 265)" }}>Lei</span>{" "}
               <span className="text-gradient-purple">Xu</span>
             </h1>
 
             <p
               className="font-display text-xl md:text-2xl font-medium mb-6 animate-fade-in-up animate-delay-100"
-              style={{ color: "oklch(0.60 0.015 265)" }}
+              style={{ color: "oklch(0.45 0.012 265)" }}
             >
               Graphics Software / Research Engineer
             </p>
 
             <p
               className="text-base md:text-lg max-w-xl leading-relaxed mb-10 animate-fade-in-up animate-delay-200"
-              style={{ color: "oklch(0.60 0.015 265)" }}
+              style={{ color: "oklch(0.45 0.012 265)" }}
             >
               I love everything about computer graphics, visual computing!
             </p>
@@ -236,11 +236,11 @@ export default function Home() {
                 onClick={(e) => { e.preventDefault(); document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" }); }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-sm transition-all duration-200 text-white"
                 style={{
-                  background: "oklch(0.62 0.22 295)",
+                  background: "oklch(0.52 0.22 295)",
                   boxShadow: "0 4px 24px oklch(0.62 0.22 295 / 0.25)",
                 }}
                 onMouseEnter={e => (e.currentTarget.style.background = "oklch(0.68 0.22 295)")}
-                onMouseLeave={e => (e.currentTarget.style.background = "oklch(0.62 0.22 295)")}
+                onMouseLeave={e => (e.currentTarget.style.background = "oklch(0.52 0.22 295)")}
               >
                 View My Work <ArrowRight size={16} />
               </a>
@@ -252,16 +252,16 @@ export default function Home() {
       </section>
 
       {/* ── About / Skills ────────────────────────────────────────────────── */}
-      <section id="about" className="section-padding" style={{ borderTop: "1px solid oklch(0.20 0.015 265)" }}>
+      <section id="about" className="section-padding" style={{ borderTop: "1px solid oklch(0.88 0.008 265)" }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <SectionLabel>About</SectionLabel>
-              <h2 className="font-display text-3xl md:text-4xl font-bold mb-6" style={{ color: "oklch(0.96 0.005 265)" }}>
+              <h2 className="font-display text-3xl md:text-4xl font-bold mb-6" style={{ color: "oklch(0.12 0.015 265)" }}>
                 Crafting pixels with{" "}
                 <span className="text-gradient-purple">precision</span>
               </h2>
-              <div className="space-y-4 leading-relaxed" style={{ color: "oklch(0.60 0.015 265)" }}>
+              <div className="space-y-4 leading-relaxed" style={{ color: "oklch(0.45 0.012 265)" }}>
                 <p>
                   I'm a graphics software engineer and researcher with over 8 years of experience building high-performance rendering systems, tools, and pipelines for games, VR operating system, and interactive media.
                 </p>
@@ -271,12 +271,12 @@ export default function Home() {
                   to="/blog"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm transition-all"
                   style={{
-                    background: "oklch(0.13 0.018 265)",
-                    border: "1px solid oklch(0.20 0.015 265)",
-                    color: "oklch(0.96 0.005 265)",
+                    background: "oklch(0.93 0.006 265)",
+                    border: "1px solid oklch(0.88 0.008 265)",
+                    color: "oklch(0.12 0.015 265)",
                   }}
-                  onMouseEnter={e => (e.currentTarget.style.borderColor = "oklch(0.62 0.22 295)")}
-                  onMouseLeave={e => (e.currentTarget.style.borderColor = "oklch(0.20 0.015 265)")}
+                  onMouseEnter={e => (e.currentTarget.style.borderColor = "oklch(0.52 0.22 295)")}
+                  onMouseLeave={e => (e.currentTarget.style.borderColor = "oklch(0.88 0.008 265)")}
                 >
                   <Code2 size={15} /> Read My Blog
                 </Link>
@@ -284,7 +284,7 @@ export default function Home() {
             </div>
 
             <div>
-              <h3 className="font-display text-lg font-semibold mb-6" style={{ color: "oklch(0.96 0.005 265)" }}>
+              <h3 className="font-display text-lg font-semibold mb-6" style={{ color: "oklch(0.12 0.015 265)" }}>
                 Technical Skills
               </h3>
               <div className="flex flex-wrap gap-2.5">
@@ -293,17 +293,17 @@ export default function Home() {
                     key={skill}
                     className="px-3 py-1.5 rounded-lg text-sm cursor-default transition-all"
                     style={{
-                      background: "oklch(0.10 0.015 265)",
-                      border: "1px solid oklch(0.20 0.015 265)",
-                      color: "oklch(0.60 0.015 265)",
+                      background: "oklch(0.97 0.004 265)",
+                      border: "1px solid oklch(0.88 0.008 265)",
+                      color: "oklch(0.45 0.012 265)",
                     }}
                     onMouseEnter={e => {
-                      (e.currentTarget as HTMLElement).style.borderColor = "oklch(0.62 0.22 295)";
-                      (e.currentTarget as HTMLElement).style.color = "oklch(0.96 0.005 265)";
+                      (e.currentTarget as HTMLElement).style.borderColor = "oklch(0.52 0.22 295)";
+                      (e.currentTarget as HTMLElement).style.color = "oklch(0.12 0.015 265)";
                     }}
                     onMouseLeave={e => {
-                      (e.currentTarget as HTMLElement).style.borderColor = "oklch(0.20 0.015 265)";
-                      (e.currentTarget as HTMLElement).style.color = "oklch(0.60 0.015 265)";
+                      (e.currentTarget as HTMLElement).style.borderColor = "oklch(0.88 0.008 265)";
+                      (e.currentTarget as HTMLElement).style.color = "oklch(0.45 0.012 265)";
                     }}
                   >
                     {skill}
@@ -322,18 +322,18 @@ export default function Home() {
                     <div className="flex flex-col items-center">
                       <div
                         className="w-2 h-2 rounded-full mt-1.5 shrink-0"
-                        style={{ background: "oklch(0.62 0.22 295)" }}
+                        style={{ background: "oklch(0.52 0.22 295)" }}
                       />
-                      <div className="w-px flex-1 mt-1" style={{ background: "oklch(0.20 0.015 265)" }} />
+                      <div className="w-px flex-1 mt-1" style={{ background: "oklch(0.88 0.008 265)" }} />
                     </div>
                     <div className="pb-4">
-                      <p className="text-xs font-mono-custom mb-0.5" style={{ color: "oklch(0.62 0.22 295)" }}>
+                      <p className="text-xs font-mono-custom mb-0.5" style={{ color: "oklch(0.52 0.22 295)" }}>
                         {exp.period}
                       </p>
-                      <p className="font-semibold text-sm" style={{ color: "oklch(0.96 0.005 265)" }}>
+                      <p className="font-semibold text-sm" style={{ color: "oklch(0.12 0.015 265)" }}>
                         {exp.company}
                       </p>
-                      <p className="text-xs" style={{ color: "oklch(0.60 0.015 265)" }}>
+                      <p className="text-xs" style={{ color: "oklch(0.45 0.012 265)" }}>
                         {exp.role}
                       </p>
                     </div>
@@ -346,20 +346,20 @@ export default function Home() {
       </section>
 
       {/* ── Projects ──────────────────────────────────────────────────────── */}
-      <section id="projects" className="section-padding" style={{ borderTop: "1px solid oklch(0.20 0.015 265)" }}>
+      <section id="projects" className="section-padding" style={{ borderTop: "1px solid oklch(0.88 0.008 265)" }}>
         <div className="max-w-6xl mx-auto px-6">
           <SectionLabel>Featured Work</SectionLabel>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold max-w-lg" style={{ color: "oklch(0.96 0.005 265)" }}>
+            <h2 className="font-display text-3xl md:text-4xl font-bold max-w-lg" style={{ color: "oklch(0.12 0.015 265)" }}>
               Projects that push the{" "}
               <span className="text-gradient-purple">boundaries</span>
             </h2>
             <Link
               to="/blog"
               className="text-sm flex items-center gap-1.5 transition-colors shrink-0"
-              style={{ color: "oklch(0.62 0.22 295)" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.96 0.005 265)")}
-              onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.62 0.22 295)")}
+              style={{ color: "oklch(0.52 0.22 295)" }}
+              onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.12 0.015 265)")}
+              onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.52 0.22 295)")}
             >
               View all writing <ArrowRight size={14} />
             </Link>
@@ -373,19 +373,19 @@ export default function Home() {
       </section>
 
       {/* ── Writing & Research ────────────────────────────────────────────── */}
-      <section id="writing" className="section-padding" style={{ borderTop: "1px solid oklch(0.20 0.015 265)" }}>
+      <section id="writing" className="section-padding" style={{ borderTop: "1px solid oklch(0.88 0.008 265)" }}>
         <div className="max-w-6xl mx-auto px-6">
           <SectionLabel>Writing & Research</SectionLabel>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold max-w-lg" style={{ color: "oklch(0.96 0.005 265)" }}>
+            <h2 className="font-display text-3xl md:text-4xl font-bold max-w-lg" style={{ color: "oklch(0.12 0.015 265)" }}>
               <span className="text-gradient-purple">Blog</span>
             </h2>
             <Link
               to="/blog"
               className="text-sm flex items-center gap-1.5 transition-colors shrink-0"
-              style={{ color: "oklch(0.62 0.22 295)" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.96 0.005 265)")}
-              onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.62 0.22 295)")}
+              style={{ color: "oklch(0.52 0.22 295)" }}
+              onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.12 0.015 265)")}
+              onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.52 0.22 295)")}
             >
               All posts <ArrowRight size={14} />
             </Link>
@@ -398,17 +398,17 @@ export default function Home() {
                   to={`/blog/${post.slug}`}
                   className="card-dark group p-6 flex flex-col gap-3 h-full"
                 >
-                  <div className="flex items-center gap-2 text-xs" style={{ color: "oklch(0.62 0.22 295)" }}>
+                  <div className="flex items-center gap-2 text-xs" style={{ color: "oklch(0.52 0.22 295)" }}>
                     <Calendar size={12} />
                     {new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
                   </div>
-                  <h3 className="font-display text-lg font-semibold" style={{ color: "oklch(0.96 0.005 265)" }}>
+                  <h3 className="font-display text-lg font-semibold" style={{ color: "oklch(0.12 0.015 265)" }}>
                     {post.title}
                   </h3>
-                  <p className="text-sm leading-relaxed flex-1" style={{ color: "oklch(0.60 0.015 265)" }}>
+                  <p className="text-sm leading-relaxed flex-1" style={{ color: "oklch(0.45 0.012 265)" }}>
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center gap-1.5 text-xs mt-1" style={{ color: "oklch(0.62 0.22 295)" }}>
+                  <div className="flex items-center gap-1.5 text-xs mt-1" style={{ color: "oklch(0.52 0.22 295)" }}>
                     Read more <ArrowRight size={12} />
                   </div>
                 </Link>
@@ -417,13 +417,13 @@ export default function Home() {
           ) : (
             <div
               className="rounded-xl border-2 border-dashed flex flex-col items-center justify-center py-20 text-center"
-              style={{ borderColor: "oklch(0.22 0.015 265)", background: "oklch(0.10 0.012 265)" }}
+              style={{ borderColor: "oklch(0.86 0.008 265)", background: "oklch(0.96 0.004 265)" }}
             >
-              <BookOpen size={32} style={{ color: "oklch(0.35 0.015 265)" }} className="mb-4" />
-              <p className="text-sm font-medium mb-1" style={{ color: "oklch(0.55 0.015 265)" }}>
+              <BookOpen size={32} style={{ color: "oklch(0.60 0.010 265)" }} className="mb-4" />
+              <p className="text-sm font-medium mb-1" style={{ color: "oklch(0.48 0.012 265)" }}>
                 No posts yet
               </p>
-              <p className="text-xs" style={{ color: "oklch(0.38 0.010 265)" }}>
+              <p className="text-xs" style={{ color: "oklch(0.55 0.010 265)" }}>
                 See README.md for instructions on how to publish a post.
               </p>
             </div>

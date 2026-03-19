@@ -37,8 +37,8 @@ export default function Navbar() {
         scrolled ? "backdrop-blur-md border-b" : ""
       }`}
       style={scrolled ? {
-        backgroundColor: "oklch(0.07 0.012 265 / 0.92)",
-        borderColor: "oklch(0.20 0.015 265)",
+        backgroundColor: "oklch(0.98 0.003 265 / 0.92)",
+        borderColor: "oklch(0.88 0.008 265)",
       } : {}}
     >
       <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
@@ -46,9 +46,9 @@ export default function Navbar() {
         <Link
           to="/"
           className="font-display font-bold text-lg tracking-tight transition-colors"
-          style={{ color: "oklch(0.96 0.005 265)" }}
-          onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.62 0.22 295)")}
-          onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.96 0.005 265)")}
+          style={{ color: "oklch(0.12 0.015 265)" }}
+          onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.52 0.22 295)")}
+          onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.12 0.015 265)")}
         >
           xuleidawang
         </Link>
@@ -61,9 +61,9 @@ export default function Navbar() {
                 <Link
                   to={link.href}
                   className="text-sm transition-colors"
-                  style={{ color: "oklch(0.60 0.015 265)" }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.96 0.005 265)")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.60 0.015 265)")}
+                  style={{ color: "oklch(0.45 0.012 265)" }}
+                  onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.12 0.015 265)")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.45 0.012 265)")}
                 >
                   {link.label}
                 </Link>
@@ -72,9 +72,9 @@ export default function Navbar() {
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
                   className="text-sm transition-colors"
-                  style={{ color: "oklch(0.60 0.015 265)" }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.96 0.005 265)")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.60 0.015 265)")}
+                  style={{ color: "oklch(0.45 0.012 265)" }}
+                  onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.12 0.015 265)")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.45 0.012 265)")}
                 >
                   {link.label}
                 </a>
@@ -86,7 +86,7 @@ export default function Navbar() {
         {/* Mobile toggle */}
         <button
           className="md:hidden p-2"
-          style={{ color: "oklch(0.96 0.005 265)" }}
+          style={{ color: "oklch(0.12 0.015 265)" }}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -99,8 +99,8 @@ export default function Navbar() {
         <div
           className="md:hidden border-b px-6 py-4 flex flex-col gap-4"
           style={{
-            backgroundColor: "oklch(0.10 0.015 265)",
-            borderColor: "oklch(0.20 0.015 265)",
+            backgroundColor: "oklch(0.97 0.004 265)",
+            borderColor: "oklch(0.88 0.008 265)",
           }}
         >
           {navLinks.map((link) =>
@@ -110,7 +110,7 @@ export default function Navbar() {
                 to={link.href}
                 onClick={() => setMobileOpen(false)}
                 className="text-sm py-1 transition-colors"
-                style={{ color: "oklch(0.60 0.015 265)" }}
+                style={{ color: "oklch(0.45 0.012 265)" }}
               >
                 {link.label}
               </Link>
@@ -120,7 +120,7 @@ export default function Navbar() {
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className="text-sm py-1 transition-colors"
-                style={{ color: "oklch(0.60 0.015 265)" }}
+                style={{ color: "oklch(0.45 0.012 265)" }}
               >
                 {link.label}
               </a>

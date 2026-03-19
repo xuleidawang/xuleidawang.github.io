@@ -12,23 +12,23 @@ export default function Footer() {
     <footer
       id="contact"
       className="border-t"
-      style={{ borderColor: "oklch(0.20 0.015 265)" }}
+      style={{ borderColor: "oklch(0.88 0.008 265)" }}
     >
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Brand */}
           <div>
-            <p className="font-display font-bold text-xl mb-3" style={{ color: "oklch(0.96 0.005 265)" }}>
+            <p className="font-display font-bold text-xl mb-3" style={{ color: "oklch(0.12 0.015 265)" }}>
               Lei Xu
             </p>
-            <p className="text-sm leading-relaxed" style={{ color: "oklch(0.60 0.015 265)" }}>
+            <p className="text-sm leading-relaxed" style={{ color: "oklch(0.45 0.012 265)" }}>
               Graphics Software & Research Engineer building real-time rendering systems and computational graphics research.
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "oklch(0.60 0.015 265)" }}>
+            <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "oklch(0.45 0.012 265)" }}>
               Navigation
             </p>
             <ul className="space-y-2">
@@ -43,9 +43,9 @@ export default function Footer() {
                     <Link
                       to={link.href}
                       className="text-sm transition-colors"
-                      style={{ color: "oklch(0.60 0.015 265)" }}
-                      onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.96 0.005 265)")}
-                      onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.60 0.015 265)")}
+                      style={{ color: "oklch(0.45 0.012 265)" }}
+                      onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.12 0.015 265)")}
+                      onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.45 0.012 265)")}
                     >
                       {link.label}
                     </Link>
@@ -53,9 +53,9 @@ export default function Footer() {
                     <a
                       href={link.href}
                       className="text-sm transition-colors"
-                      style={{ color: "oklch(0.60 0.015 265)" }}
-                      onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.96 0.005 265)")}
-                      onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.60 0.015 265)")}
+                      style={{ color: "oklch(0.45 0.012 265)" }}
+                      onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.12 0.015 265)")}
+                      onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.45 0.012 265)")}
                     >
                       {link.label}
                     </a>
@@ -67,7 +67,7 @@ export default function Footer() {
 
           {/* Socials + Email */}
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "oklch(0.60 0.015 265)" }}>
+            <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "oklch(0.45 0.012 265)" }}>
               Connect
             </p>
             <div className="flex flex-col gap-3">
@@ -78,9 +78,9 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2.5 text-sm transition-colors"
-                  style={{ color: "oklch(0.60 0.015 265)" }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.62 0.22 295)")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.60 0.015 265)")}
+                  style={{ color: "oklch(0.45 0.012 265)" }}
+                  onMouseEnter={e => (e.currentTarget.style.color = "oklch(0.52 0.22 295)")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "oklch(0.45 0.012 265)")}
                 >
                   <Icon size={15} />
                   {label}
@@ -89,7 +89,7 @@ export default function Footer() {
               {/* Email — plain text, not a link */}
               <div
                 className="flex items-center gap-2.5 text-sm"
-                style={{ color: "oklch(0.60 0.015 265)" }}
+                style={{ color: "oklch(0.45 0.012 265)" }}
               >
                 <Mail size={15} />
                 daniel_[lastname][firstname]@hotmail.com
@@ -100,7 +100,7 @@ export default function Footer() {
 
         <div
           className="mt-12 pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-4"
-          style={{ borderColor: "oklch(0.20 0.015 265)" }}
+          style={{ borderColor: "oklch(0.88 0.008 265)" }}
         >
           <p className="text-xs" style={{ color: "oklch(0.45 0.010 265)" }}>
             © {new Date().getFullYear()} Lei Xu. All rights reserved.
